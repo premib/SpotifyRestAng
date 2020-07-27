@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <ng-template #content let-modal>
+    </ng-template>
+    <div class="container-fluid content">
+        <h3>
+            Uniquely yours
+        </h3>
+        <div class="col-sm-2">
+            <a [routerLink]="['../playlist','cardDetail.playlistName']" id="showAd" class="card" >
+                <img class="card-img-top" src="../../assets/spotifyrest.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Liked Song</h5>                     
+                    <button  id = "playBtnLike"  (click)="openLg(content)" class="btn btn-success playBtn">
+                        <i class="fa fa-play" aria-hidden="true"></i>
+                    </button>                      
+                </div>
+            </a>
+        </div>
+        <h3>Common Playlist</h3>
+        <div  class="d-flex flex-row flex-wrap">
+            <div *ngFor="let cardDetail of cardData; let i= index" class="col-sm-2">
+                <a [routerLink]="['../playlist',cardDetail.playlistMongoId]" id="showAd" class="card" >
+                    <img [src]= 'cardImages[i]'>
+                    <div class="card-body">
+                        <h5 class="card-title">{{cardDetail.playlistName}}</h5>    
+                        <p style="position: absolute;">{{cardDetail.playlistDescription}}</p>                   
+                        <button id = "playBtnLike"  class="btn btn-success playBtn">
+                            <i class="fa fa-play" aria-hidden="true"></i>
+                        </button>                      
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

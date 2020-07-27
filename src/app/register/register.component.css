@@ -1,0 +1,71 @@
+label{
+    font-family: Proxima Nova;
+    font-weight: bolder;
+}
+
+p{
+    font-family: "Proxima Nova";
+    font-weight: "bold";
+}
+
+input{
+    padding: 10px;
+    font: 1em sans-serif;
+    height: 3em;
+}
+
+select{
+    padding: 5px;
+    font: 1em sans-serif;
+    height: 3em;
+}
+
+h3{
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+h5{
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+button{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    transition: transform 0.2s;
+    padding-bottom: 14px;
+    letter-spacing: 1px;
+}
+button:hover{
+    transform: scale(1.02);
+}
+.red{
+    color: #cf2323;
+}
+
+input.reds{
+    outline: 1px solid #cf2323;
+}
+
+select.reds{
+    outline: 1px sold #cf2323;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+
+#signup{
+    transition: transform .2s;
+}
+
+#signup:hover{
+    transform: scale(1.02);
+    background-color: #61b828;
+}

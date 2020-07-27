@@ -1,0 +1,29 @@
+<div id="playlist">
+    <div class="container-fluid row titles">
+        <img src="https://charts-images.scdn.co/REGIONAL_IN_LARGE.jpg" alt="">
+        <div class="column info">
+            <p>PLAYLIST<p>
+            <h1 class="display-2">TITLE</h1>
+            <small>description</small>
+        </div>
+    </div>
+    <div class="container-fluid" id="controls">
+        <button (click)="openLg(content)"    class="btn btn-success playBtn">
+            <i class="fa fa-play" aria-hidden="true"></i>
+        </button>
+        <button (click)="openLg(content)" class="btn btn-dark playBtn">
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+        </button>
+        <button (click)="openLg(content)" class="btn btn-dark playBtn">
+            <i class="fa fa-ellipsis-h"></i>
+        </button>
+    </div>
+    <ng-template #content let-modal></ng-template>
+    <div class="container-fluid row justify-content-between music">
+        <div class="row">
+            <button class="btn btn-link btn-md text-secondary" (click)="openLg(content)"><i  class="fa fa-music" aria-hidden="true"></i></button>
+            <h5>Song Name</h5>
+        </div>                
+        <span>Time</span>
+    </div>
+</div>

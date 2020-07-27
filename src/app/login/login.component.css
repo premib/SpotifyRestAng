@@ -1,0 +1,63 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 12%;
+  }
+
+  
+h5{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+
+#loginMain{
+    width:35%;
+    margin:0 auto;
+    margin-top: 30px;
+}
+
+#loginMain > div > button{
+    border-radius: 100px;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn-light{
+    border: 1px solid black;
+}
+
+#loginButton{
+    border-radius: 100px;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width:100%;
+}
+
+#remember{
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.red{
+    margin-top:3px;
+    color: #cf2323;
+}
+
+.reds{
+    outline: 1px solid #cf2323;
+}
+
+#errorButton{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #cf2323;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}

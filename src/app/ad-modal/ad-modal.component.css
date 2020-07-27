@@ -1,0 +1,127 @@
+#playlist{
+    background-color: #232723;
+}
+
+.titles{
+    background-color: #495c51;
+    width: 101.2%;
+} 
+
+.titles *{
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-dark{
+    background-color: #232723;
+    border: #232723;
+}
+
+.btn-dark:focus{ 
+    border: #232723;
+}
+.playBtn{
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    margin-left: 25px;
+    /* padding: 5px; */
+}
+
+#controls{
+    margin-top: 20px;
+    background-color: #232723;
+    display: inline-block;
+}
+
+.titles .info{
+    margin-top: 26px;
+    color: azure;
+}
+
+.titles .info h1{
+    font-weight: bolder;
+}
+
+.titles img{
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    height: 232px;
+    width: auto;
+}
+
+.music{
+    padding-top: 9px;
+    padding-bottom: 9px;
+    color: whitesmoke;
+    margin-top: 10px;
+
+}
+
+.music div button{
+    border-radius: 100px;
+}
+
+.music:hover  {
+    background-color: #2b332f;
+}
+
+
+.music *{
+    margin-top: 4px;
+    margin-bottom: 3px;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+
+
+.modal-body{
+    background-color: #495c51;
+    text-align: justify;
+}
+
+
+
+.modal-body img{
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.modal-footer{
+    background-color: rgba(0, 0, 0, 0)
+
+}
+
+.modal-footer button{
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    opacity: 1;
+}
+
+.modal-body .titles .info button{
+    border-radius: 100px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.modal-body .titles .info small{
+    font-weight: bold;
+    margin-left: 100px;
+}
+
+.modal-body .titles .info small a{
+    color: white;
+    font-weight: bold;
+}

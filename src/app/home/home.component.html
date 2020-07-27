@@ -1,0 +1,41 @@
+
+<div class="wrapper">
+    <div class="sidebar">
+        <button class="btn" routerLink="/playlist"><img src="../../assets/spotifyrestlogo.svg" alt="Nothing"  class="sidebarImg"></button>
+        <ul>
+            <li><button routerLink="/playlist" class="btn btn-link btn-block btn-lg"><span class="pull-left"><img src="../../assets/home-solid.svg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</span></button></li>
+            <li><button class="btn btn-link btn-block btn-lg"><span class="pull-left"><img src="../../assets/search-solid.svg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search</span></button></li>
+            <li><button class="btn btn-link btn-block btn-lg" ><span class="pull-left"><img src="../../assets/book-solid.svg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Library</span></button></li>
+        </ul>
+                <svg style="margin-top:30px" height="1" width="100%">
+                    <line x1="0" y1="0" x2="100%" y2="0" style="stroke:#a1a1a1;stroke-width:1" />
+                </svg>
+         <ul>
+            <li>
+                <button class="btn btn-link btn-block btn-lg" >
+                    <span class="pull-left"><img src="../../assets/book-solid.svg">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Playlist
+                    </span>
+                </button>
+            </li>
+            <li><button class="btn btn-link btn-block btn-lg" ><span class="pull-left"><img src="../../assets/book-solid.svg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Liked</span></button></li>
+        </ul>         
+    </div>
+    <div class="main d-flex flex-column">
+        <nav class="d-flex flex-row justify-content-between justify-self-center">
+            <div style="margin-top: 10px; margin-left: 20px;">
+                <button class="btn" (click)="goBack()"><img src="../../assets/iconmonstr-angel-left-thin.svg"></button>
+                <button class="btn" (click)="goForward()" style=" margin-left: 50px;"><img src="../../assets/iconmonstr-angel-right-thin.svg"></button>
+            </div>
+            <div >
+                <button routerLink="/register" class="btn btn-dark  btn-lg px-4 mr-4 my-3">SIGN UP</button>
+                <button routerLink="/login" class="btn btn-light btn-lg px-4 mr-4 my-3">LOG IN</button>
+            </div>
+            
+        </nav>    
+        <div style="background-color: #222222;">
+            <router-outlet></router-outlet> 
+        </div>
+    </div>
+</div>
+

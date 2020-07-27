@@ -1,0 +1,63 @@
+.wrapper{
+    display: inline-block;
+    background-color: #222222;
+    height: 100%;
+    /* display: block; */
+    color: white;
+    word-spacing: 0.1px;
+}
+
+
+.content{
+    margin-left: 15px;
+}
+
+.content h3{
+    margin-top: 20px;
+}
+
+.playBtn{
+    position: relative;
+    float: right;
+    z-index: inherit;
+    border-radius: 100px;
+    margin-top: -40px;
+}
+
+.card{
+    background-color: #333333;
+    height: auto;
+    width: auto;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card img{
+    height: 200px;
+    width: auto;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.row{
+    height: 50px;
+}
+
+.card .card-body {
+    padding-bottom: 20px;
+}
+
+.card .card-body h5{
+    font-size: medium;
+}
+
+.card .card-body p{
+    font-weight: 200;
+    font-size: small;
+}

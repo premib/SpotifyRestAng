@@ -1,0 +1,186 @@
+
+<div id="registerMain" style="width: 30%;margin:0 auto;">
+    <img src="../../assets/spotifyrest.png" alt="Nothing" width="auto" height="auto" class="center">
+    <h3>Sign up with your email address</h3>
+    <button class="btn  btn-lg btn-block" style=" background-color:#3b5998;color:whitesmoke; border-radius: 100px;"><SMAll style="font-weight: bold;" >SIGN UP WITH FACEBOOK</SMAll></button>
+    <svg  height= "30" width="100%">
+        <line x1="0" y1="12" x2="45%" y2="12" style="stroke:#a1a1a1;stroke-width:1" />
+        <text x="220" y="15" font-family="Proxima" font-size="20" fill="black">or</text>
+        <line x1="55%" y1="12" x2="100%" y2="12" style="stroke:#a1a1a1;stroke-width:1" />
+    </svg>
+    <h5>Sign up with your email address</h5>
+    <div class="d-flex flex-column">
+        <form class="form" [formGroup]="myForm" (ngSubmit)="sendRegisterRequest(myForm)" >
+            <div class="form-group py-2">
+                <label for="registerEmail">Your email address.</label>
+                <input type="text" id="registerEmail" class="form-control form-control-lg" formControlName="email" placeholder="Enter your email." [ngClass]="{reds:(myForm.get('email').invalid && myForm.get('email').touched)}">
+                <div class="red" *ngIf="(myForm.get('email').invalid && myForm.get('email').touched)">
+                    <svg role="img" height="16" width="16" viewBox="0 0 24 24" aria-label="Error indicator">
+                        <circle cx="12" cy="12" r="9.5" fill="none" stroke="#181818"></circle>
+                            <line x1="12" y1="14" x2="12" y2="7" fill="#181818" stroke="#181818"></line><circle cx="12" cy="16.65" r=".35" fill="#181818" stroke="#181818">
+                        </circle>
+                    </svg>
+                    <span *ngIf="myForm.get('email').value === ''">
+                        You need to enter your email
+                    </span>
+                    <span *ngIf="myForm.get('email').value !== ''">
+                        This email is invalid. Make sure it's written like name@email.com
+                    </span>
+                </div>
+            </div>
+            <div class="form-group py-2">
+                <label for="registerEmailRe">Confirm your email address.</label>
+                <input type="text" id="registerEmailRe" class="form-control form-control-lg" formControlName="emailConfirm" placeholder="Enter your email again." [ngClass]="{reds:(myForm.get('emailConfirm').invalid && myForm.get('emailConfirm').touched || (myForm.get('emailConfirm').dirty && !sameEmail()))}">
+                <div class="red" *ngIf="myForm.get('emailConfirm').invalid && myForm.get('emailConfirm').touched || (myForm.get('emailConfirm').dirty && !sameEmail())">
+                    <svg role="img" height="16" width="16" viewBox="0 0 24 24" aria-label="Error indicator">
+                        <circle cx="12" cy="12" r="9.5" fill="none" stroke="#181818"></circle>
+                            <line x1="12" y1="14" x2="12" y2="7" fill="#181818" stroke="#181818"></line><circle cx="12" cy="16.65" r=".35" fill="#181818" stroke="#181818">
+                        </circle>
+                    </svg>
+                    <span *ngIf="myForm.get('emailConfirm').value === ''">
+                        You need to confirm your email
+                    </span>
+                    <span *ngIf="sameEmail() || myForm.get('emailConfirm').value !== '' ">
+                        The email addresses don't match
+                    </span>
+                </div>
+            </div>
+            <div class="form-group py-2">
+                <label for="registerPassword">Create a password.</label>
+                <input type="password" id="registerPassword" class="form-control form-control-lg" formControlName="password" placeholder="Create a password." [ngClass]="{reds:(myForm.get('password').invalid && myForm.get('password').touched)}">
+                <div class="red" *ngIf="myForm.get('password').invalid && myForm.get('password').touched">
+                    <svg role="img" height="16" width="16" viewBox="0 0 24 24" aria-label="Error indicator">
+                        <circle cx="12" cy="12" r="9.5" fill="none" stroke="#181818"></circle>
+                            <line x1="12" y1="14" x2="12" y2="7" fill="#181818" stroke="#181818"></line><circle cx="12" cy="16.65" r=".35" fill="#181818" stroke="#181818">
+                        </circle>
+                    </svg>
+                    <span *ngIf="myForm.get('password').value === ''">
+                        You need to create a password
+                    </span>
+                    <span *ngIf="myForm.get('password').value !== ''">
+                        Your password is too short
+                    </span>
+                </div>
+            </div>
+            <div class="form-group py-2">
+                <label for="registerNick">What should we call you?</label>
+                <input type="text" id="registerNick" class="form-control form-control-lg" formControlName="userName" placeholder="Enter a profile name." [ngClass]="{reds:(myForm.get('userName').invalid && myForm.get('userName').touched)}">
+                <p *ngIf="myForm.get('userName').valid || myForm.get('userName').untouched">This appears on your profile </p>
+                <div class="red" *ngIf="myForm.get('userName').invalid && myForm.get('userName').touched">
+                    <svg role="img" height="16" width="16" viewBox="0 0 24 24" aria-label="Error indicator">
+                        <circle cx="12" cy="12" r="9.5" fill="none" stroke="#181818"></circle>
+                            <line x1="12" y1="14" x2="12" y2="7" fill="#181818" stroke="#181818"></line><circle cx="12" cy="16.65" r=".35" fill="#181818" stroke="#181818">
+                        </circle>
+                    </svg>
+                    <span *ngIf="myForm.get('userName').value === ''">
+                        Enter a name for your profile
+                    </span>
+                    <span *ngIf="myForm.get('userName').value !== ''">
+                        Nick name should be 6-16 letters long
+                    </span>
+                </div>
+            </div>
+            <div class="form-group py-2">
+                <label for="registerDob">Your date of birth.</label>
+                <div class="row">
+                    <div class="col">
+                        <label for="registerYear">Year</label>
+                        <input type="text" class="form-control form-control-lg" formControlName="dobYear" maxlength="4" placeholder="YYYY" [ngClass]="{reds:(myForm.get('dobYear').invalid && myForm.get('dobYear').touched)}">
+                    </div>
+                    <div class="col">
+                        <label for="registerMonth">Month</label>
+                        <select class="form-control form-control-lg" formControlName="dobMonth" name="registerMonth" id="registerMonth" aria-placeholder="Month" [ngClass]="{reds:(myForm.get('dobMonth').invalid && myForm.get('dobMonth').touched)}">
+                            <option disabled value="">Month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="registerDay">Day</label>
+                        <input type="text" class="form-control form-control-lg" formControlName="dobDay" min="0" maxlength="2" placeholder="DD" [ngClass]="{reds:(myForm.get('dobDay').invalid && myForm.get('dobDay').touched)}">
+                    </div>
+                </div>
+                <div class="red" *ngIf="myForm.get('dobYear').invalid && myForm.get('dobYear').touched">
+                    <svg role="img" height="16" width="16" viewBox="0 0 24 24" aria-label="Error indicator">
+                        <circle cx="12" cy="12" r="9.5" fill="none" stroke="#181818"></circle>
+                            <line x1="12" y1="14" x2="12" y2="7" fill="#181818" stroke="#181818"></line><circle cx="12" cy="16.65" r=".35" fill="#181818" stroke="#181818">
+                        </circle>
+                    </svg>
+                    <div *ngIf="(yearWrong(myForm.get('dobYear').value));then dateError2 else dateError1">
+                    </div>
+                        <ng-template  #dateError1>
+                            Enter a valid year.
+                        </ng-template>
+                        <ng-template #dateError2>
+                            Sorry Kid, you are too young to use SpotifyRest.
+                        </ng-template>
+                </div>
+                <div class="red" *ngIf="myForm.get('dobMonth').invalid && myForm.get('dobMonth').touched">
+                    <svg role="img" height="16" width="16" viewBox="0 0 24 24" aria-label="Error indicator">
+                        <circle cx="12" cy="12" r="9.5" fill="none" stroke="#181818"></circle>
+                            <line x1="12" y1="14" x2="12" y2="7" fill="#181818" stroke="#181818"></line><circle cx="12" cy="16.65" r=".35" fill="#181818" stroke="#181818">
+                        </circle>
+                    </svg>
+                    Enter your birth month
+                </div>
+                <div class="red" *ngIf="myForm.get('dobDay').invalid && myForm.get('dobDay').touched">
+                    <svg role="img" height="16" width="16" viewBox="0 0 24 24" aria-label="Error indicator">
+                        <circle cx="12" cy="12" r="9.5" fill="none" stroke="#181818"></circle>
+                            <line x1="12" y1="14" x2="12" y2="7" fill="#181818" stroke="#181818"></line><circle cx="12" cy="16.65" r=".35" fill="#181818" stroke="#181818">
+                        </circle>
+                    </svg>
+                    Enter a valid day of the month.
+
+                </div>
+            </div>
+            <div class="form-group py-2">
+                <label for="registerGender">Your gender.</label><br>
+                <div id="registerGender1" class="form-check form-check-inline pr-5">
+                    <input class="form-check-input" formControlName="gender" type="radio" name="gender" value="male" id="registerGenderMale">
+                    <label class="form-check-label" for="registerGenderMale">Male</label>
+                </div>
+                <div id="registerGender2" class="form-check form-check-inline pr-5">
+                    <input class="form-check-input" type="radio" formControlName="gender" name="gender" value="female" id="registerGenderFemale">
+                    <label class="form-check-label" for="registerGenderFemale">Female</label>
+                </div>
+                <div id="registerGender3" class="form-check form-check-inline pr-5">
+                    <input class="form-check-input" type="radio" formControlName="gender" name="gender" value="non-binary" id="registerGenderNonBinary">
+                    <label class="form-check-label" for="registerGenderNonBinary">Non-binary</label>
+                </div>
+                <div class="red" *ngIf="myForm.get('gender').invalid && myForm.get('gender').touched">
+                    <svg role="img" height="16" width="16" viewBox="0 0 24 24" aria-label="Error indicator">
+                        <circle cx="12" cy="12" r="9.5" fill="none" stroke="#181818"></circle>
+                            <line x1="12" y1="14" x2="12" y2="7" fill="#181818" stroke="#181818"></line><circle cx="12" cy="16.65" r=".35" fill="#181818" stroke="#181818">
+                        </circle>
+                    </svg>
+                    Select your gender.
+                </div>
+            </div>
+            <div class="form-check form-check-inline py-2">
+                <input type="checkbox" name="shareData" id="shareData" formControlName="shareData" class="form-check-input">
+                <label for="shareData" class="form-check-label"> Share my registration data with SpotifyRest's clients for all suspicious marketing purpose  </label>
+
+            </div>
+            <div class="form-group py-2">
+                <button id="signup" class="btn btn-success btn-lg btn-block" style="border-radius: 100px">
+                    <small style="font-weight: bold;">SIGN UP</small>
+                </button>
+            </div>
+        </form>
+        <div class="py-2 form-group">
+            <p style="font-weight: bold; text-align: center;">
+                Have an account?<a class="btn btn-link text-success" routerLink="/login">Log in.</a>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+
+        <div class="modal-body">
+            <div class="container-fluid row titles">
+                <img [src]="imageSource" alt="">
+                <div class="column info">
+                    <h2>
+                        Start listening with a <br>
+                        free SpotifyRest account
+                    </h2>
+                    <button routerLink="/register" class="btn btn-success btn-block  btn-lg" (click)="activeModal.close('Close click')"> 
+                        SIGN UP FREE
+                    </button>
+                    <button class="btn btn-light btn-block btn-lg" (click)="activeModal.close('Close click')">
+                        DOWNLOAD APP
+                    </button>
+                    <small>Already have an account?<a class="btn btn-link" routerLink="/login" (click)="activeModal.dismiss('Cross click')">LOG IN</a></small>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link" (click)="activeModal.dismiss('Cross click')">Close</button>
+        </div>
