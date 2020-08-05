@@ -20,12 +20,12 @@ export class HttpService {
 
   registerAccount(credential: UserAccount): Observable<any>{
       
-      return this.http.post('http://www.prem123.azurewebsites.net/v1/user/register', credential,this.commonOption);
+      return this.http.post('https://www.prem123.azurewebsites.net/v1/user/register', credential,this.commonOption);
   }
 
   login(credential: object): Observable<any>{
 
-    return this.http.post('http://www.prem123.azurewebsites.net/v1/user/login', credential, this.commonOption);
+    return this.http.post('https://www.prem123.azurewebsites.net/v1/user/login', credential, this.commonOption);
   }
 
   getDummyHome(): Observable<any>{
