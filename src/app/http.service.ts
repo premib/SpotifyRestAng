@@ -20,12 +20,12 @@ export class HttpService {
 
   registerAccount(credential: UserAccount): Observable<any>{
       
-      return this.http.post('http://www.localhost:8080/v1/auth/register', credential,this.commonOption);
+      return this.http.post('http://www.prem123.azurewebsites.net/v1/user/register', credential,this.commonOption);
   }
 
   login(credential: object): Observable<any>{
 
-    return this.http.post('http://www.localhost:8080/v1/auth/login', credential, this.commonOption);
+    return this.http.post('http://www.prem123.azurewebsites.net/v1/user/login', credential, this.commonOption);
   }
 
   getDummyHome(): Observable<any>{
@@ -49,6 +49,6 @@ export class HttpService {
   }
 
   getPlaylistSongs(playlistMongoId): Observable<any>{
-    return this.http.get(`http://localhost:8080/v1/auth/playlist`, playlistMongoId);
+    return this.http.get(`http://localhost:8080/v1/auth/playlist/${playlistMongoId}`);
   }
 }
